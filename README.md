@@ -7,3 +7,5 @@ git clone https://github.com/Paspasuy/InnoTracker
 cd InnoTracker
 make run
 ```
+
+Requirements: java 21, docker, make
