@@ -1,0 +1,25 @@
+services:
+  web:
+    depends_on:
+      - postgres
+    build:
+      context: ./
+      dockerfile: ./docker/Dockerfile
+    ports:
+      - "80:8080"
+    environment:
+      POSTGRES_DB: default
+      POSTGRES_HOST: postgres
+    volumes:
+      - ./docker/pictures:/pictures
+  postgres:
+    image: "postgres:15.8-alpine3.20"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: 1
+      POSTGRES_DB: default
+    volumes:
+      - ./docker/postgres-data:/var/lib/postgresql/data
+    container_name: postgres
