@@ -5,6 +5,7 @@
 ```bash
 git clone https://github.com/Paspasuy/InnoTracker
 cd InnoTracker
+make init
 make run
 ```
 
